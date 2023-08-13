@@ -70,8 +70,13 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 
+    // Hilt dependencies
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    // Retrofit dependencies
+    implementation(libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.gson) // Gson dependency
 }
 
 kapt {
