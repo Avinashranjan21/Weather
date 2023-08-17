@@ -12,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.weather.api.OpenWeatherAPI
 import com.example.weather.ui.theme.WeatherTheme
+import com.example.weather.view.compose.CityItem
+import com.example.weather.view.compose.CityList
 import com.example.weather.view.screens.HomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
@@ -25,14 +27,14 @@ class MainActivity : ComponentActivity() {
     lateinit var openWeatherAPI: OpenWeatherAPI
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        GlobalScope.launch {
-            // TODO: This is just for sample and will be removed in next iteration
-            val response = openWeatherAPI.getCurrentWeatherByCityName(cityName = "Nagpur",
-                apiId = "cf5c3b402763610f19dae9626a23818d" )
-            Log.d("TAG",response.body().toString())
-        }
+//        GlobalScope.launch {
+//            // TODO: This is just for sample and will be removed in next iteration
+//            val response = openWeatherAPI.getCurrentWeatherByCityName(cityName = "Nagpur",
+//                apiId = "cf5c3b402763610f19dae9626a23818d" )
+//            Log.d("TAG",response.body().toString())
+//        }
         setContent {
-            HomeScreen()
+            HomeScreen { CityItem(cityName = "New Delhi") }
         }
     }
 }

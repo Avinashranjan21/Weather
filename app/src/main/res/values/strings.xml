@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="toolbar_title">Weather App</string>
+    <string name="hs_weather_type_today">Today</string>
+    <string name="hs_weather_type_today_7_days">7 Days</string>
 </resources>
